@@ -15,10 +15,18 @@ class DevicesController: UIViewController {
     //this table view will be used to display the current devices the user has
     @IBOutlet var tableView: UITableView!
     
+    //the viewModel representing this controller
+    private var devicesViewModel : DevicesViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        //this will update and show the data on the devicesController
+        callToViewModelForUpdateUI()
+    }
+    
+    
+    func callToViewModelForUpdateUI(){
+        self.devicesViewModel = DevicesViewModel()
     }
 
 

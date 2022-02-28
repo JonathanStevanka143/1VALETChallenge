@@ -15,6 +15,9 @@
 		63EDD7B427CD3EE200CA5363 /* _VALETChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EDD7B327CD3EE200CA5363 /* _VALETChallengeTests.swift */; };
 		63EDD7BF27CD3EE200CA5363 /* _VALETChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EDD7BE27CD3EE200CA5363 /* _VALETChallengeUITests.swift */; };
 		63EDD7D927CD546900CA5363 /* DevicesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EDD7D827CD546900CA5363 /* DevicesController.swift */; };
+		63EDD7E527CD58E500CA5363 /* DevicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EDD7E427CD58E500CA5363 /* DevicesViewModel.swift */; };
+		63EDD7EA27CD596600CA5363 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EDD7E927CD596600CA5363 /* Device.swift */; };
+		63EDD7EF27CD5D3C00CA5363 /* ApiNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EDD7EE27CD5D3C00CA5363 /* ApiNetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		63EDD7BE27CD3EE200CA5363 /* _VALETChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _VALETChallengeUITests.swift; sourceTree = "<group>"; };
 		63EDD7C027CD3EE200CA5363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63EDD7D827CD546900CA5363 /* DevicesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesController.swift; sourceTree = "<group>"; };
+		63EDD7E427CD58E500CA5363 /* DevicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesViewModel.swift; sourceTree = "<group>"; };
+		63EDD7E927CD596600CA5363 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		63EDD7EE27CD5D3C00CA5363 /* ApiNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 		63EDD79B27CD3EE100CA5363 /* 1VALETChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				63EDD7E327CD58B600CA5363 /* Networking */,
 				63EDD7D427CD4F5B00CA5363 /* ViewModels */,
 				63EDD7D327CD4F5400CA5363 /* Models */,
 				63EDD7D227CD4F4D00CA5363 /* Controllers */,
@@ -141,6 +148,7 @@
 		63EDD7D327CD4F5400CA5363 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				63EDD7E927CD596600CA5363 /* Device.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -148,8 +156,17 @@
 		63EDD7D427CD4F5B00CA5363 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				63EDD7E427CD58E500CA5363 /* DevicesViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		63EDD7E327CD58B600CA5363 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				63EDD7EE27CD5D3C00CA5363 /* ApiNetwork.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,9 +299,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63EDD7E527CD58E500CA5363 /* DevicesViewModel.swift in Sources */,
 				63EDD79D27CD3EE100CA5363 /* AppDelegate.swift in Sources */,
 				63EDD7D927CD546900CA5363 /* DevicesController.swift in Sources */,
+				63EDD7EF27CD5D3C00CA5363 /* ApiNetwork.swift in Sources */,
 				63EDD79F27CD3EE100CA5363 /* SceneDelegate.swift in Sources */,
+				63EDD7EA27CD596600CA5363 /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

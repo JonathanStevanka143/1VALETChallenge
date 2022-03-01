@@ -14,7 +14,7 @@ class ApiNetwork: NSObject {
     private let endPointUrl = URL(string: "www.exampleAPIEndpoint.com/user/devices")
     
     //this will hold our fake JSON data coming back
-    var fakeJson:[[String:Any]]! =
+    private var fakeJson:[[String:Any]]! =
         [
             
             ["id":"1234","os":"iOS 14","status":"Available","size":"1600 x 800","isFavourite":false,"imageUrl":"","title":"iPhone 11","description":"this is an example description testing my fake JSON"],
@@ -27,13 +27,15 @@ class ApiNetwork: NSObject {
             
             ["id":"1238","os":"iOS 14","status":"Available","size":"1600 x 800","isFavourite":false,"imageUrl":"","title":"iPhone 5","description":"this is an example description testing my fake JSON"],
             
-            
-            
     ]
+    //this will hold all of the converted devices from our FakeJson class
+    //will be used to help us with searching
+    private var devicesArray:[DeviceData] = []
     
-    
-    
-    
+    func grabCurrentDevices() -> [DeviceData] {
+        return devicesArray
+    }
+
     func apiToGetEmployeeData(completion : @escaping ([DeviceData]) -> ()){
         
         
@@ -43,7 +45,7 @@ class ApiNetwork: NSObject {
         //for testing purposes return the converted models
         
         //create an array to hold the models
-        var devicesArray:[DeviceData] = []
+        devicesArray = []
         
         //cycle through our fake devices
         for deviceJSON in fakeJson {

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class DevicesController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DevicesController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     //this will be used to search stored device data
     @IBOutlet var searchBar: UISearchBar!
@@ -22,11 +22,12 @@ class DevicesController: UIViewController, UITableViewDelegate, UITableViewDataS
         super.viewDidLoad()
         //set-up the ViewModel for this class
         self.callToViewModelForUpdateUI()
+        //set the searchbar delegate
+        self.searchBar.delegate = self
         //set the tableview delegate
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
-    
     
     
     //MARK: UI related
@@ -38,7 +39,6 @@ class DevicesController: UIViewController, UITableViewDelegate, UITableViewDataS
         self.devicesViewModel.bindDevicesViewModelToController = {
             //if the data was set on the VM, update the data on the front end
             self.updateDataSource()
-            print(self.devicesViewModel.devData.count)
         }
         //create the initial call to grab the data
         //important this is after the bind call so we can receive data
@@ -111,6 +111,16 @@ class DevicesController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     
+    
+    //MARK: SearchField methods
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        guard let searchText = searchBar.text else {
+            fatalError()
+        }
+        devicesViewModel.searchForDevice(searchText: searchText)
+        
+    }
     
     
 }

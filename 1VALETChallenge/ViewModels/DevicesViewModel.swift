@@ -12,15 +12,22 @@ class DevicesViewModel: NSObject {
     //our API class for making calls to the network
     private var apiNetwork: ApiNetwork!
     
+    private(set) var devData : [DeviceData]! {
+            didSet {
+                self.bindDevicesViewModelToController()
+            }
+        }
+    
+    var bindDevicesViewModelToController : (() -> ()) = {}
+    
     override init(){
         super.init()
         self.apiNetwork = ApiNetwork()
-        callToGetDeviceData()
     }
     
     func callToGetDeviceData(){
         self.apiNetwork.apiToGetEmployeeData { (deviceData) in
-            print(deviceData)
+            self.devData = deviceData
         }
     }
 }

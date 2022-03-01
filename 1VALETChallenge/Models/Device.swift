@@ -9,16 +9,20 @@ import Foundation
 
 // MARK: - DeviceData
 struct DeviceData: Decodable {
-    let id, type, currency, imageUrl, title, deviceDescription: String
-    let price : Int
+    let id, title, os, size, imageUrl, deviceDescription: String
     let isFavourite : Bool
+    let status : availability
     
+    enum availability: String, Codable {
+        case available = "Available"
+        case notAvailable = "Not Available"
+    }
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
-        case type = "type"
-        case price = "price"
-        case currency = "currency"
+        case os = "type"
+        case status = "status"
+        case size = "size"
         case isFavourite = "isFavourite"
         case imageUrl = "imageUrl"
         case title = "title"

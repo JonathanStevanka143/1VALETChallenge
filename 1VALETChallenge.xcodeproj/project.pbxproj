@@ -18,6 +18,7 @@
 		63EDD7E527CD58E500CA5363 /* DevicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EDD7E427CD58E500CA5363 /* DevicesViewModel.swift */; };
 		63EDD7EA27CD596600CA5363 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EDD7E927CD596600CA5363 /* Device.swift */; };
 		63EDD7EF27CD5D3C00CA5363 /* ApiNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EDD7EE27CD5D3C00CA5363 /* ApiNetwork.swift */; };
+		63EDD7F727CD72EA00CA5363 /* DeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EDD7F627CD72EA00CA5363 /* DeviceTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		63EDD7E427CD58E500CA5363 /* DevicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesViewModel.swift; sourceTree = "<group>"; };
 		63EDD7E927CD596600CA5363 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		63EDD7EE27CD5D3C00CA5363 /* ApiNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNetwork.swift; sourceTree = "<group>"; };
+		63EDD7F627CD72EA00CA5363 /* DeviceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		63EDD79B27CD3EE100CA5363 /* 1VALETChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				63EDD7FB27CDA6C100CA5363 /* TableCells */,
 				63EDD7E327CD58B600CA5363 /* Networking */,
 				63EDD7D427CD4F5B00CA5363 /* ViewModels */,
 				63EDD7D327CD4F5400CA5363 /* Models */,
@@ -167,6 +170,14 @@
 				63EDD7EE27CD5D3C00CA5363 /* ApiNetwork.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		63EDD7FB27CDA6C100CA5363 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				63EDD7F627CD72EA00CA5363 /* DeviceTableViewCell.swift */,
+			);
+			path = TableCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +316,7 @@
 				63EDD7EF27CD5D3C00CA5363 /* ApiNetwork.swift in Sources */,
 				63EDD79F27CD3EE100CA5363 /* SceneDelegate.swift in Sources */,
 				63EDD7EA27CD596600CA5363 /* Device.swift in Sources */,
+				63EDD7F727CD72EA00CA5363 /* DeviceTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

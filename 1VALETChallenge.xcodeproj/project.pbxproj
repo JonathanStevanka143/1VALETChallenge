@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		633DB05F27CFFF0300A94590 /* DeviceDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633DB05E27CFFF0300A94590 /* DeviceDetailsViewModel.swift */; };
+		638EC1F227CDC9760033AC33 /* DeviceDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638EC1F127CDC9760033AC33 /* DeviceDetailsController.swift */; };
 		63EDD79D27CD3EE100CA5363 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EDD79C27CD3EE100CA5363 /* AppDelegate.swift */; };
 		63EDD79F27CD3EE100CA5363 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EDD79E27CD3EE100CA5363 /* SceneDelegate.swift */; };
 		63EDD7A427CD3EE100CA5363 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EDD7A227CD3EE100CA5363 /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		633DB05E27CFFF0300A94590 /* DeviceDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailsViewModel.swift; sourceTree = "<group>"; };
+		638EC1F127CDC9760033AC33 /* DeviceDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailsController.swift; sourceTree = "<group>"; };
 		63EDD79927CD3EE100CA5363 /* 1VALETChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1VALETChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63EDD79C27CD3EE100CA5363 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63EDD79E27CD3EE100CA5363 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				63EDD7D827CD546900CA5363 /* DevicesController.swift */,
+				638EC1F127CDC9760033AC33 /* DeviceDetailsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				63EDD7E427CD58E500CA5363 /* DevicesViewModel.swift */,
+				633DB05E27CFFF0300A94590 /* DeviceDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -312,6 +318,8 @@
 			files = (
 				63EDD7E527CD58E500CA5363 /* DevicesViewModel.swift in Sources */,
 				63EDD79D27CD3EE100CA5363 /* AppDelegate.swift in Sources */,
+				638EC1F227CDC9760033AC33 /* DeviceDetailsController.swift in Sources */,
+				633DB05F27CFFF0300A94590 /* DeviceDetailsViewModel.swift in Sources */,
 				63EDD7D927CD546900CA5363 /* DevicesController.swift in Sources */,
 				63EDD7EF27CD5D3C00CA5363 /* ApiNetwork.swift in Sources */,
 				63EDD79F27CD3EE100CA5363 /* SceneDelegate.swift in Sources */,

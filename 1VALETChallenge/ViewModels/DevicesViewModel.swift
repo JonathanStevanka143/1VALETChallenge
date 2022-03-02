@@ -52,7 +52,7 @@ class DevicesViewModel: NSObject {
             }
             
         }
-        //if the text is null the user has stopped typing, reset the data back to normal
+        //if the text is null or equals '""' the user has stopped typing, reset the data back to normal
         else if searchText == "" {
             self.devData = self.apiNetwork.grabCurrentDevices()
         }

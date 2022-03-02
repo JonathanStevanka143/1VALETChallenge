@@ -18,6 +18,16 @@ class DevicesController: UIViewController, UITableViewDelegate, UITableViewDataS
     //the viewModel representing this controller
     private var devicesViewModel : DevicesViewModel!
     
+    override func viewWillDisappear(_ animated: Bool) {
+        //this will show the navbar on the device details page
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //this will hide the navbar for this page
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //set-up the ViewModel for this class
@@ -53,12 +63,27 @@ class DevicesController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
     }
     
-    
-    
     //MARK: tableview methods
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //1.grab the data for the path
+        //2.init a controller and set the data
+        //3.present the VC
         
+        //grab the current data for selected row
+        let currentData = self.devicesViewModel.devData[indexPath.row]
+
+        //init the device details controller
+        guard let controller = self.storyboard?.instantiateViewController(identifier: "deviceDetailsController") as? DeviceDetailsController else {
+            fatalError()
+        }
+        
+        //set the 'currentDevice' on the Vm to the device that was clicked on
+        controller.currentDevice = currentData
+        //set the presentation to fullscreen
+        controller.modalPresentationStyle = .fullScreen
+        //push the VC into the navigation controller
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     //get rid of un-neccesary lines under the last item when there is not enough data to fill the page
@@ -66,9 +91,7 @@ class DevicesController: UIViewController, UITableViewDelegate, UITableViewDataS
         return UIView()
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         //return the total amount of devices in our array
         return self.devicesViewModel.devData.count
     }
@@ -77,12 +100,12 @@ class DevicesController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         //grab the 'currentDevice' from our array
         let currentDevice = self.devicesViewModel.devData[indexPath.row]
-        //check the cell
+        //init a reusableCell
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "deviceTableCell") as! DeviceTableViewCell? else {
             fatalError()
         }
         
-        //using mutable string for the UX
+        //using mutable string to create more informative text
         var myMutableString = NSMutableAttributedString()
         
         //check the value of the enum

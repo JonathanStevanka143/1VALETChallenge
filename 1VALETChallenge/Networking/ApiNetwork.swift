@@ -21,7 +21,7 @@ class ApiNetwork: NSObject {
              
             ["id":"1235","os":"Oreo api 23","status":"Available","size":"1600 x 800","isFavourite":false,"imageUrl":"","title":"Android pixel 2","description":"this is an example description testing my fake JSON"],
             
-            ["id":"1236","os":"iOS 14","status":"Available","size":"1600 x 800","isFavourite":false,"imageUrl":"","title":"iPhone 13","description":"this is an example description testing my fake JSON"],
+            ["id":"1236","os":"iOS 14","status":"Available","size":"1600 x 800","isFavourite":false,"imageUrl":"","title":"iPhone 13","description":"this is an example description testing my fake JSON, this is an example description testing my fake JSON"],
             
             ["id":"1237","os":"iOS 14","status":"","size":"1600 x 800","isFavourite":false,"imageUrl":"","title":"iPhone 7","description":"this is an example description testing my fake JSON"],
             

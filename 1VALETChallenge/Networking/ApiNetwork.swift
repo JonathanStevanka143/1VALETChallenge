@@ -23,7 +23,7 @@ class ApiNetwork: NSObject {
             
             ["id":"1236","os":"iOS 14","status":"Available","size":"1600 x 800","isFavourite":false,"imageUrl":"","title":"iPhone 13","description":"this is an example description testing my fake JSON, this is an example description testing my fake JSON"],
             
-            ["id":"1237","os":"iOS 14","status":"","size":"1600 x 800","isFavourite":false,"imageUrl":"","title":"iPhone 7","description":"this is an example description testing my fake JSON"],
+            ["id":"1237","os":"iOS 14","status":"Not Available","size":"1600 x 800","isFavourite":false,"imageUrl":"","title":"iPhone 7","description":"this is an example description testing my fake JSON"],
             
             ["id":"1238","os":"iOS 14","status":"Available","size":"1600 x 800","isFavourite":false,"imageUrl":"","title":"iPhone 5","description":"this is an example description testing my fake JSON"],
             
@@ -38,7 +38,6 @@ class ApiNetwork: NSObject {
 
     func apiToGetEmployeeData(completion : @escaping ([DeviceData]) -> ()){
         
-        
         //ACTING as if the URL request is actually running
         //We end up with 3 DeviceData models after the jsonDecoder.decode runs.
         //for simplicity sake because i cant use codeable due to not using real requests im just going to make a foreach loop that will make them into models
@@ -49,7 +48,6 @@ class ApiNetwork: NSObject {
         
         //cycle through our fake devices
         for deviceJSON in fakeJson {
-            
             
             //create a new model for the users Device
             let newModel = DeviceData(id: deviceJSON["id"] as! String, title: deviceJSON["title"] as! String, os: deviceJSON["os"] as! String, size: deviceJSON["size"] as! String, imageUrl: deviceJSON["imageUrl"] as! String, deviceDescription: deviceJSON["description"] as! String, isFavourite: deviceJSON["isFavourite"] as! Bool, status: (DeviceData.availability.init(rawValue: deviceJSON["status"] as! String) ?? DeviceData.availability(rawValue: "Not Available"))!)
@@ -76,5 +74,42 @@ class ApiNetwork: NSObject {
 //            }
 //        }.resume()
     }
+    
+    
+    //this allows us to check and see if a live URL request return would work.
+    func modelConversionTest() -> [DeviceData]{
+        
+        //this will hold the converted models
+        var decodedArray:[DeviceData] = []
+        
+        //check to see if we can serialize the fakeJson
+        if let fakeJSONSerialized = try? JSONSerialization.data(withJSONObject: fakeJson, options: []) {
+            
+            //treat the 'fakeJSONSerialized' like a response object from a server
+            if let jsonResponseObject = try! JSONSerialization.jsonObject(with: fakeJSONSerialized, options: []) as? [[String:Any]] {
+                
+                //for all of the devices we were returned, convert them into objects to be used
+                for item in jsonResponseObject {
+                    //init a jsondecoder
+                    let jsonDecoder = JSONDecoder()
+                    
+                    //serialize the current item
+                    if let itemData = try? JSONSerialization.data(withJSONObject: item, options: []) {
+                        //decode the object into a DeviceData model
+                        let devData = try! jsonDecoder.decode(DeviceData.self, from: itemData)
+                        //append the data to the decoded array
+                        decodedArray.append(devData)
+                    }
+
+                }
+            
+            }
+            
+        }
+        
+        return decodedArray
+    }
+    
+    
     
 }

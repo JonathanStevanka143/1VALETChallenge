@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		632341BD27D071F800F9325C /* deviceControllerTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632341BC27D071F800F9325C /* deviceControllerTableViewTests.swift */; };
 		633DB05F27CFFF0300A94590 /* DeviceDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633DB05E27CFFF0300A94590 /* DeviceDetailsViewModel.swift */; };
 		638EC1F227CDC9760033AC33 /* DeviceDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638EC1F127CDC9760033AC33 /* DeviceDetailsController.swift */; };
 		63EDD79D27CD3EE100CA5363 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EDD79C27CD3EE100CA5363 /* AppDelegate.swift */; };
@@ -24,6 +25,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		632341BF27D071F800F9325C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63EDD79127CD3EE100CA5363 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63EDD79827CD3EE100CA5363;
+			remoteInfo = 1VALETChallenge;
+		};
 		63EDD7B027CD3EE200CA5363 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 63EDD79127CD3EE100CA5363 /* Project object */;
@@ -41,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		632341BA27D071F800F9325C /* deviceControllerTableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = deviceControllerTableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		632341BC27D071F800F9325C /* deviceControllerTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deviceControllerTableViewTests.swift; sourceTree = "<group>"; };
+		632341BE27D071F800F9325C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		633DB05E27CFFF0300A94590 /* DeviceDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailsViewModel.swift; sourceTree = "<group>"; };
 		638EC1F127CDC9760033AC33 /* DeviceDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailsController.swift; sourceTree = "<group>"; };
 		63EDD79927CD3EE100CA5363 /* 1VALETChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1VALETChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +75,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		632341B727D071F800F9325C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63EDD79627CD3EE100CA5363 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -88,12 +106,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		632341BB27D071F800F9325C /* deviceControllerTableViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				632341BC27D071F800F9325C /* deviceControllerTableViewTests.swift */,
+				632341BE27D071F800F9325C /* Info.plist */,
+			);
+			path = deviceControllerTableViewTests;
+			sourceTree = "<group>";
+		};
 		63EDD79027CD3EE100CA5363 = {
 			isa = PBXGroup;
 			children = (
 				63EDD79B27CD3EE100CA5363 /* 1VALETChallenge */,
 				63EDD7B227CD3EE200CA5363 /* 1VALETChallengeTests */,
 				63EDD7BD27CD3EE200CA5363 /* 1VALETChallengeUITests */,
+				632341BB27D071F800F9325C /* deviceControllerTableViewTests */,
 				63EDD79A27CD3EE100CA5363 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,6 +132,7 @@
 				63EDD79927CD3EE100CA5363 /* 1VALETChallenge.app */,
 				63EDD7AF27CD3EE200CA5363 /* 1VALETChallengeTests.xctest */,
 				63EDD7BA27CD3EE200CA5363 /* 1VALETChallengeUITests.xctest */,
+				632341BA27D071F800F9325C /* deviceControllerTableViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,6 +218,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		632341B927D071F800F9325C /* deviceControllerTableViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 632341C127D071F800F9325C /* Build configuration list for PBXNativeTarget "deviceControllerTableViewTests" */;
+			buildPhases = (
+				632341B627D071F800F9325C /* Sources */,
+				632341B727D071F800F9325C /* Frameworks */,
+				632341B827D071F800F9325C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				632341C027D071F800F9325C /* PBXTargetDependency */,
+			);
+			name = deviceControllerTableViewTests;
+			productName = deviceControllerTableViewTests;
+			productReference = 632341BA27D071F800F9325C /* deviceControllerTableViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		63EDD79827CD3EE100CA5363 /* 1VALETChallenge */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63EDD7C327CD3EE200CA5363 /* Build configuration list for PBXNativeTarget "1VALETChallenge" */;
@@ -251,6 +298,10 @@
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					632341B927D071F800F9325C = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 63EDD79827CD3EE100CA5363;
+					};
 					63EDD79827CD3EE100CA5363 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -280,11 +331,19 @@
 				63EDD79827CD3EE100CA5363 /* 1VALETChallenge */,
 				63EDD7AE27CD3EE200CA5363 /* 1VALETChallengeTests */,
 				63EDD7B927CD3EE200CA5363 /* 1VALETChallengeUITests */,
+				632341B927D071F800F9325C /* deviceControllerTableViewTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		632341B827D071F800F9325C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63EDD79727CD3EE100CA5363 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -312,6 +371,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		632341B627D071F800F9325C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				632341BD27D071F800F9325C /* deviceControllerTableViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63EDD79527CD3EE100CA5363 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -347,6 +414,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		632341C027D071F800F9325C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63EDD79827CD3EE100CA5363 /* 1VALETChallenge */;
+			targetProxy = 632341BF27D071F800F9325C /* PBXContainerItemProxy */;
+		};
 		63EDD7B127CD3EE200CA5363 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 63EDD79827CD3EE100CA5363 /* 1VALETChallenge */;
@@ -379,6 +451,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		632341C227D071F800F9325C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Q5R34W6CG;
+				INFOPLIST_FILE = deviceControllerTableViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jonathanstevanka.deviceControllerTableViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/1VALETChallenge.app/1VALETChallenge";
+			};
+			name = Debug;
+		};
+		632341C327D071F800F9325C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Q5R34W6CG;
+				INFOPLIST_FILE = deviceControllerTableViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jonathanstevanka.deviceControllerTableViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/1VALETChallenge.app/1VALETChallenge";
+			};
+			name = Release;
+		};
 		63EDD7C127CD3EE200CA5363 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -591,6 +703,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jonathanstevanka.-VALETChallengeUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = 1VALETChallenge;
@@ -611,6 +724,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jonathanstevanka.-VALETChallengeUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = 1VALETChallenge;
@@ -620,6 +734,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		632341C127D071F800F9325C /* Build configuration list for PBXNativeTarget "deviceControllerTableViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				632341C227D071F800F9325C /* Debug */,
+				632341C327D071F800F9325C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		63EDD79427CD3EE100CA5363 /* Build configuration list for PBXProject "1VALETChallenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

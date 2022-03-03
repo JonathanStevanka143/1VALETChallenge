@@ -25,6 +25,7 @@ class DeviceDetailsViewModel: NSObject {
     //allow binding for this view model
     var bindDevicesViewModelToController : (() -> ()) = {}
     
+    //set the data for the currently clicked on device
     func setDeviceData(device:DeviceData) {
         //set the current device
         self.devData = device

@@ -109,14 +109,14 @@ class DevicesController: UIViewController, UITableViewDelegate, UITableViewDataS
         var myMutableString = NSMutableAttributedString()
         
         //check the value of the enum
-        if currentDevice.status.rawValue == "Available" {
+        if currentDevice.status.rawValue == DeviceData.availability.available.rawValue {
             
             //create a new attributed string
             myMutableString = NSMutableAttributedString(string: "Status: \(currentDevice.status.rawValue)", attributes: nil)
             //set the foreground attribute that way we can manipulate the text color
             myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: #colorLiteral(red: 0.001247007969, green: 0.6028117069, blue: 0.0351134165, alpha: 1), range: NSRange(location:7,length: currentDevice.status.rawValue.count + 1))
             
-        }else if currentDevice.status.rawValue == "Not Available"{
+        }else if currentDevice.status.rawValue == DeviceData.availability.notAvailable.rawValue {
             
             //create a new attributed string
             myMutableString = NSMutableAttributedString(string: "Status: \(currentDevice.status.rawValue)", attributes: nil)
@@ -138,9 +138,11 @@ class DevicesController: UIViewController, UITableViewDelegate, UITableViewDataS
     //MARK: SearchField methods
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
+        //make sure the search text is not nil
         guard let searchText = searchBar.text else {
             fatalError()
         }
+        //search the devices titles with the desired text
         devicesViewModel.searchForDevice(searchText: searchText)
         
     }

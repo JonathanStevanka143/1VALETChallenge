@@ -13,11 +13,13 @@ struct DeviceData: Codable {
     let isFavourite : Bool
     let status : availability
     
+    //this represents the accepted cases for the 'status' var
     enum availability: String, Codable {
         case available = "Available"
         case notAvailable = "Not Available"
     }
     
+    //allows the model to be decoded into a model
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case os = "os"

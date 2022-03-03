@@ -20,9 +20,7 @@ class DeviceDetailsController: UIViewController {
     @IBOutlet var deviceSizeLabel: UILabel!
     //device description label
     @IBOutlet var deviceDescriptionLabel: UILabel!
-    //device favourite label
-    @IBOutlet var deviceFavouriteLabel: UILabel!
-    
+    //device status availability indicator 
     @IBOutlet var deviceStatusLabel: UILabel!
     
     //this will hold the model data from the previous controller
@@ -32,6 +30,7 @@ class DeviceDetailsController: UIViewController {
     private var deviceDetailsViewModel : DeviceDetailsViewModel!
     
     override func viewDidDisappear(_ animated: Bool) {
+        //this will allow us to utilize the top nav bar
         self.navigationController?.isNavigationBarHidden = true
     }
     
@@ -52,6 +51,7 @@ class DeviceDetailsController: UIViewController {
         //create call to set the data
         //important this is after the bind call so we can receive data
         if currentDevice != nil {
+            //set the data on the VM to ensure protocol standards are kept
             self.deviceDetailsViewModel.setDeviceData(device: currentDevice)
         }
     }
@@ -66,24 +66,22 @@ class DeviceDetailsController: UIViewController {
             
             //setup all of the labels required
             self.deviceTitleLabel.text = self.deviceDetailsViewModel.devData.title
-            self.operatingSystemLabel.text = self.deviceDetailsViewModel.devData.os
-            self.deviceSizeLabel.text = self.deviceDetailsViewModel.devData.size
+            self.operatingSystemLabel.text = "OS: " + self.deviceDetailsViewModel.devData.os
+            self.deviceSizeLabel.text = "Size: " + self.deviceDetailsViewModel.devData.size
             self.deviceDescriptionLabel.text = self.deviceDetailsViewModel.devData.deviceDescription
-            self.deviceFavouriteLabel.text = String(self.deviceDetailsViewModel.devData.isFavourite)
-            
             
             //using mutable string for the UX
             var myMutableString = NSMutableAttributedString()
             
             //check the value of the enum
-            if self.deviceDetailsViewModel.devData.status.rawValue == "Available" {
+            if self.deviceDetailsViewModel.devData.status.rawValue == DeviceData.availability.available.rawValue {
                 
                 //create a new attributed string
                 myMutableString = NSMutableAttributedString(string: "Status: \(self.deviceDetailsViewModel.devData.status.rawValue)", attributes: nil)
                 //set the foreground attribute that way we can manipulate the text color
                 myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: #colorLiteral(red: 0.001247007969, green: 0.6028117069, blue: 0.0351134165, alpha: 1), range: NSRange(location:7,length: self.deviceDetailsViewModel.devData.status.rawValue.count + 1))
                 
-            }else if self.deviceDetailsViewModel.devData.status.rawValue == "Not Available"{
+            }else if self.deviceDetailsViewModel.devData.status.rawValue == DeviceData.availability.notAvailable.rawValue {
                 
                 //create a new attributed string
                 myMutableString = NSMutableAttributedString(string: "Status: \(self.deviceDetailsViewModel.devData.status.rawValue)", attributes: nil)

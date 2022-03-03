@@ -12,12 +12,14 @@ class DevicesViewModel: NSObject {
     //our API class for making calls to the network
     private var apiNetwork: ApiNetwork!
     
+    //this holds all of our data and also acts as our callback
     private(set) var devData : [DeviceData]! {
         didSet {
             self.bindDevicesViewModelToController()
         }
     }
     
+    //allows us to bind our controllers
     var bindDevicesViewModelToController : (() -> ()) = {}
     
     override init(){
@@ -25,13 +27,14 @@ class DevicesViewModel: NSObject {
         self.apiNetwork = ApiNetwork()
     }
     
+    //get the data from the API
     func callToGetDeviceData(){
         self.apiNetwork.apiToGetEmployeeData { (deviceData) in
             self.devData = deviceData
         }
     }
     
-    
+    //this allows the user to search for a specific device
     func searchForDevice(searchText : String) {
         //1. search for the title of a device given the searchtext
         //2. set the devdata variable so the call back will get updated

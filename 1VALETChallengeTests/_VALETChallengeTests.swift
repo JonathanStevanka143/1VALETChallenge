@@ -13,7 +13,6 @@ class _VALETChallengeTests: XCTestCase {
     var apiNetwork : ApiNetwork!
     var devicesVM : DevicesViewModel!
     var deviceDetailsVM : DeviceDetailsViewModel!
-
     
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -54,7 +53,7 @@ class _VALETChallengeTests: XCTestCase {
         
         //3. compute the result
         //with our current fake data, 'iph' should return 4 devices
-        XCTAssertEqual(devicesVM.devData.count,4)
+        XCTAssertEqual(devicesVM.devData.count,5)
         
     }
 
